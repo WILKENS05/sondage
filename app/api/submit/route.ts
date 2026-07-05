@@ -21,7 +21,7 @@ export async function POST(req: NextRequest) {
     const reponse_2 = (body.reponse_2 ?? '').trim();
     const reponse_3 = (body.reponse_3 ?? '').trim();
     const pays = (body.pays ?? '').trim().slice(0, 100) || null;
-    const langue = body.langue === 'ht' ? 'ht' : 'fr';
+    const langue = body.langue === 'ht' || body.langue === 'en' ? body.langue : 'fr';
 
     if (!reponse_1 || !reponse_2 || !reponse_3) {
         return NextResponse.json({ error: 'Les 3 réponses sont requises.' }, { status: 400 });

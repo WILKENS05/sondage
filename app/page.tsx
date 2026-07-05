@@ -4,7 +4,7 @@ import { useState } from 'react';
 import HaitianFlag from './components/HaitianFlag';
 import styles from './page.module.css';
 
-type Lang = 'fr' | 'ht';
+type Lang = 'fr' | 'ht' | 'en';
 
 const CONTENT: Record<Lang, {
     badge: string;
@@ -51,6 +51,21 @@ const CONTENT: Record<Lang, {
         error: 'Gen yon pwoblèm. Eseye ankò.',
         footer: 'Repons anonim, itilize sèlman pou analiz opinyon piblik.',
     },
+    en: {
+        badge: '🇭🇹 Citizen survey',
+        title: 'Your voice matters',
+        subtitle: "Whether you're in Haiti or in the diaspora, share your opinion on the future of the country. Three questions, a few minutes.",
+        q1: 'In your opinion, what are the main obstacles to accessing quality education in Haiti, and what tools or resources could improve the situation?',
+        q2: 'How could technology (Internet, smartphones, artificial intelligence...) improve daily life or Haitian society?',
+        q3: 'If you could change one single thing to improve the future of Haiti, what would it be and why?',
+        paysLabel: 'Where do you currently live? (optional)',
+        paysPlaceholder: 'E.g.: Port-au-Prince, Miami, Paris...',
+        submit: 'Send my answers',
+        submitting: 'Sending...',
+        success: 'Mèsi ! Thank you! Your voice has been recorded.',
+        error: 'Something went wrong. Please try again.',
+        footer: 'Anonymous answers, used only for public opinion analysis.',
+    },
 };
 
 export default function Home() {
@@ -96,6 +111,13 @@ export default function Home() {
                     type="button"
                 >
                     Kreyòl
+                </button>
+                <button
+                    className={lang === 'en' ? styles.langActive : styles.langBtn}
+                    onClick={() => setLang('en')}
+                    type="button"
+                >
+                    English
                 </button>
             </div>
 
