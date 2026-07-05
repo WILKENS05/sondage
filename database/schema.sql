@@ -10,3 +10,5 @@ CREATE TABLE responses (
   created_at   TIMESTAMPTZ DEFAULT now()
 );
 CREATE INDEX idx_responses_created_at ON responses(created_at);
+CREATE INDEX idx_responses_langue ON responses(langue);
+CREATE INDEX idx_responses_pays ON responses(pays);
