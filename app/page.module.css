@@ -45,8 +45,8 @@
 }
 
 .flag {
-    width: 96px;
-    height: 64px;
+    width: 110px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0 8px 30px rgba(0, 32, 159, 0.25);
     margin-bottom: 20px;
